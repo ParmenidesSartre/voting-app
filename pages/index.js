@@ -34,7 +34,7 @@ const Index = () => {
                     deserunt mollit anim id est laborum
                   </p>
                   <hr style={{height : '5px', borderTop : '2px solid'}}/>
-                  <Link route={'/'}>
+                  <Link route={'/poll'}>
                   <a class="info-link" style={{ color: 'blue' }} href="">
                     Discover more{' '}
                     <svg
