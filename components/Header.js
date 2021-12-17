@@ -5,7 +5,6 @@ const HeaderContainer = () => {
     <div className="header-container">
       <header className="header navbar navbar-expand-sm">
         <a
-          href="javascript:void(0);"
           className="sidebarCollapse"
           data-placement="bottom"
         >

@@ -37,12 +37,13 @@ class Pool extends Component {
     try {
       var amount = 1
       const account = await web3.eth.getAccounts()
+      const data = await poll.methods
+        .transfer(addr, web3.utils.toWei(amount.toString()))
+        .encodeABI()
       var tx = {
         from: account[0],
         to: poll._address,
-        data: poll.methods
-          .transfer(addr, web3.utils.toWei(amount.toString()))
-          .encodeABI(),
+        data: data,
         gas: 3000000,
       }
       const receipt = await web3.eth.sendTransaction(tx)
@@ -89,7 +90,10 @@ class Pool extends Component {
     return (
       <>
         <HeadSection />
-        <body className="sidebar-noneoverflow" style={{fontFamily : 'Quicksand, sans-serif'}}>
+        <body
+          className="sidebar-noneoverflow"
+          style={{ fontFamily: 'Quicksand, sans-serif' }}
+        >
           <HeaderContainer />
 
           <div className="main-container" id="container">
@@ -139,16 +143,7 @@ class Pool extends Component {
                                 func={this.chooseValue}
                                 addr={this.props.address['2']}
                               />
-                              <div
-                                ref={(element) => {
-                                  if (element)
-                                    element.style.setProperty(
-                                      'border',
-                                      '2px',
-                                      'important',
-                                    )
-                                }}
-                              />
+                              <div/>
                               <Button
                                 onClick={(event) => {
                                   event.preventDefault()
