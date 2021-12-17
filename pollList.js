@@ -3,7 +3,7 @@ const compiledPool = require('./build/poll.json')
 
 const instance = new web3.eth.Contract(
   compiledPool,
-  '0x3854c97B5EB4bc29881e97D7790D4e1eD5F61e31',
+  '0x07bE87a28767B69D12f78D4dbb17c7fD172f4cD2',
 )
 
 export default instance

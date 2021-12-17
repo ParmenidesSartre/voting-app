@@ -34,6 +34,17 @@ const HeadSection = () => {
         type="text/css"
       />
 
+      <link
+        href="plugins/apex/apexcharts.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="/css/widgets/modules-widgets.css"
+      />
+
       <script src="/js/libs/jquery-3.1.1.min.js"></script>
       <script src="/bootstrap/js/popper.min.js"></script>
       <script src="/bootstrap/js/bootstrap.min.js"></script>

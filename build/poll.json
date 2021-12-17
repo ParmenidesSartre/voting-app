@@ -573,6 +573,19 @@
 	},
 	{
 		"inputs": [],
+		"name": "tokenBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "balanceToken",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "tokensPerEth",
 		"outputs": [
 			{

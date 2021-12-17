@@ -3,8 +3,25 @@ import HeadSection from '../components/Head'
 import HeaderContainer from '../components/Header'
 import Navbar from '../components/Navbar'
 import Body from '../components/Body'
+import poll from '../pollList'
+import armworld from '../armWorld'
+import web3 from '../web3'
+import web3Binance from '../webBinance'
 
 class BuySell extends Component {
+  static async getInitialProps() {
+    let balanceArm = await armworld.methods
+      .balanceOf('0xF81b94beB72aD2eA568125c844cE1D272aAEdeC7')
+      .call()
+    balanceArm /= 1000000000
+
+    let balanceSet = await poll.methods
+      .tokenBalance()
+      .call()
+    balanceSet /= 1000000000000000000
+    return { balanceArm , balanceSet }
+  }
+
   render() {
     return (
       <>
@@ -23,23 +40,87 @@ class BuySell extends Component {
 
             <div id="content" className="main-content">
               <div className="layout-px-spacing">
-                <div class="row layout-top-spacing">
-                  <div class="col-xl-12 col-lg-12 col-md-12 col-12 layout-spacing">
-                    <div class="widget-content-area br-4">
-                      <div class="widget-one">
-                        <h5>Get Token for a Small Fee</h5>
+                <div className="row sales">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing pt-5">
+                    <div class="widget widget-account-invoice-one">
+                      <div class="widget-heading">
+                        <h5 class="">ARMWORLD Token Info</h5>
+                      </div>
 
-                        <p class="">
-                          With CORK starter kit, you can begin your work without
-                          any hassle. The starter page is highly optimized which
-                          gives you freedom to start with minimal code and add
-                          only the desired components and plugins required for
-                          your project.
-                        </p>
+                      <div class="widget-content">
+                        <div class="invoice-box">
+                          <div class="acc-total-info">
+                            <h5>Balance of Token</h5>
+                            <p class="acc-amount">
+                              {this.props.balanceArm} ARMWORLD
+                            </p>
+                          </div>
+
+                          <div class="inv-detail">
+                            <div class="info-detail-1">
+                              <p>Contract Address</p>
+                              <p>0xF81b94beB72aD2eA568125c844cE1D272aAEdeC7</p>
+                            </div>
+                            <div class="info-detail-1">
+                              <p>Token Supply</p>
+                              <p>30,000,000 token</p>
+                            </div>
+                            <div class="info-detail-2">
+                              <p>Taxes</p>
+                              <p>$ 17.82</p>
+                            </div>
+                          </div>
+
+                          <div class="inv-action">
+                            <a href="#" class="btn btn-danger">
+                              Track on EtherScan
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 layout-spacing pt-5">
+                    <div class="widget widget-account-invoice-one">
+                      <div class="widget-heading">
+                        <h5 class="">SET Token Info</h5>
+                      </div>
+
+                      <div class="widget-content">
+                        <div class="invoice-box">
+                          <div class="acc-total-info">
+                            <h5>Balance of Token</h5>
+                            <p class="acc-amount">
+                              {this.props.balanceSet} SET
+                            </p>
+                          </div>
+
+                          <div class="inv-detail">
+                            <div class="info-detail-1">
+                              <p>Contract Address</p>
+                              <p>0x3854c97B5EB4bc29881e97D7790D4e1eD5F61e31</p>
+                            </div>
+                            <div class="info-detail-1">
+                              <p>Token Supply</p>
+                              <p>30,000,000 SET</p>
+                            </div>
+                            <div class="info-detail-2">
+                              <p>Taxes</p>
+                              <p>$ 17.82</p>
+                            </div>
+                          </div>
+
+                          <div class="inv-action">
+                            <a href="#" class="btn btn-danger">
+                              Track on EtherScan
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <hr style={{ height: '5px', borderTop: '1px solid' }} />
                 <div className="row layout-top-spacing">
                   <div className="col-xl-12 col-lg-12 col-md-12 col-12 layout-spacing">
                     <div className="widget-content-area br-4">
@@ -59,7 +140,7 @@ class BuySell extends Component {
                                         novalidate
                                         action="javascript:void(0);"
                                       >
-                                        <label for="validationCustom01">
+                                        <label htmlFor="validationCustom01">
                                           Amount that you want to trade ( in
                                           Ether )
                                         </label>
@@ -130,10 +211,9 @@ class BuySell extends Component {
                                     <div class="form">
                                       <form
                                         class="select mt-4"
-                                        novalidate
-                                        action="javascript:void(0);"
+                                        noValidate
                                       >
-                                        <label for="validationCustom01">
+                                        <label htmlFor="validationCustom01">
                                           Amount that you want to trade ( in Set
                                           )
                                         </label>
