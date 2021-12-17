@@ -15,11 +15,9 @@ class BuySell extends Component {
       .call()
     balanceArm /= 1000000000
 
-    let balanceSet = await poll.methods
-      .tokenBalance()
-      .call()
+    let balanceSet = await poll.methods.tokenBalance().call()
     balanceSet /= 1000000000000000000
-    return { balanceArm , balanceSet }
+    return { balanceArm, balanceSet }
   }
 
   render() {
@@ -59,7 +57,9 @@ class BuySell extends Component {
                           <div class="inv-detail">
                             <div class="info-detail-1">
                               <p>Contract Address</p>
-                              <p>0xF81b94beB72aD2eA568125c844cE1D272aAEdeC7</p>
+                              <p className="truncate">
+                                0xF81b94beB72aD2eA568125c844cE1D272aAEdeC7
+                              </p>
                             </div>
                             <div class="info-detail-1">
                               <p>Token Supply</p>
@@ -72,8 +72,8 @@ class BuySell extends Component {
                           </div>
 
                           <div class="inv-action">
-                            <a href="#" class="btn btn-danger">
-                              Track on EtherScan
+                            <a href='https://bscscan.com/address/0xF81b94beB72aD2eA568125c844cE1D272aAEdeC7' target="_blank" class="btn btn-danger">
+                              Track on BSCScan
                             </a>
                           </div>
                         </div>
@@ -98,7 +98,9 @@ class BuySell extends Component {
                           <div class="inv-detail">
                             <div class="info-detail-1">
                               <p>Contract Address</p>
-                              <p>0x3854c97B5EB4bc29881e97D7790D4e1eD5F61e31</p>
+                              <p className="truncate">
+                                0x3854c97B5EB4bc29881e97D7790D4e1eD5F61e31
+                              </p>
                             </div>
                             <div class="info-detail-1">
                               <p>Token Supply</p>
@@ -111,7 +113,7 @@ class BuySell extends Component {
                           </div>
 
                           <div class="inv-action">
-                            <a href="#" class="btn btn-danger">
+                            <a href="https://rinkeby.etherscan.io/address/0x07bE87a28767B69D12f78D4dbb17c7fD172f4cD2"  target="_blank" class="btn btn-danger">
                               Track on EtherScan
                             </a>
                           </div>
@@ -120,151 +122,158 @@ class BuySell extends Component {
                     </div>
                   </div>
                 </div>
-                <hr style={{ height: '5px', borderTop: '1px solid' }} />
+                <hr style={{ height: '5px', borderTop: '1px dotted' }} />
                 <div className="row layout-top-spacing">
                   <div className="col-xl-12 col-lg-12 col-md-12 col-12 layout-spacing">
                     <div className="widget-content-area br-4">
                       <div class="form">
-                        <div class="form-container">
-                          <div class="form-form">
-                            <div class="form-form-wrap">
-                              <div class="form-container">
-                                <div class="form-content">
-                                  <h1 class="">
-                                    Trade Ether for token <br /> right here
-                                  </h1>
-                                  <form class="text-left">
-                                    <div class="form">
-                                      <form
-                                        class="select mt-4"
-                                        novalidate
-                                        action="javascript:void(0);"
-                                      >
-                                        <label htmlFor="validationCustom01">
-                                          Amount that you want to trade ( in
-                                          Ether )
-                                        </label>
-                                        <div class="form-row">
-                                          <div class="col-md-12">
-                                            <div
-                                              id="select_menu"
-                                              class="form-group mb-4"
-                                            >
-                                              <select
-                                                class="custom-select"
-                                                required
+                        <div class="row justify-content-center">
+                          <div class="col-lg-4" style={{paddingTop : '100px' , paddingBottom  : '100px'}}>
+                            <div class="form-form">
+                              <div class="form-form-wrap">
+                                <div class="form-container">
+                                  <div class="form-content">
+                                    <h1 class="">
+                                      Trade Ether for token <br /> right here
+                                    </h1>
+                                    <form class="text-left">
+                                      <div class="form">
+                                        <form
+                                          class="select mt-4"
+                                          novalidate
+                                          action="javascript:void(0);"
+                                        >
+                                          <label htmlFor="validationCustom01">
+                                            Amount that you want to trade ( in
+                                            Ether )
+                                          </label>
+                                          <div class="form-row">
+                                            <div class="col-md-12">
+                                              <div
+                                                id="select_menu"
+                                                class="form-group mb-4"
                                               >
-                                                <option value="0.001">
-                                                  0.001
-                                                </option>
-                                                <option value="0.005">
-                                                  0.001
-                                                </option>
-                                                <option value="0.01">
-                                                  0.01
-                                                </option>
-                                                <option value="0.05">
-                                                  0.05
-                                                </option>
-                                                <option value="0.1">0.1</option>
-                                                <option value="0.5">
-                                                  0.50
-                                                </option>
-                                                <option value="1">1</option>
-                                              </select>
-                                              <div class="valid-feedback">
-                                                Example valid custom select
-                                                feedback
-                                              </div>
-                                              <div class="invalid-feedback">
-                                                Please Select the field
+                                                <select
+                                                  class="custom-select"
+                                                  required
+                                                >
+                                                  <option value="0.001">
+                                                    0.001
+                                                  </option>
+                                                  <option value="0.005">
+                                                    0.001
+                                                  </option>
+                                                  <option value="0.01">
+                                                    0.01
+                                                  </option>
+                                                  <option value="0.05">
+                                                    0.05
+                                                  </option>
+                                                  <option value="0.1">
+                                                    0.1
+                                                  </option>
+                                                  <option value="0.5">
+                                                    0.50
+                                                  </option>
+                                                  <option value="1">1</option>
+                                                </select>
+                                                <div class="valid-feedback">
+                                                  Example valid custom select
+                                                  feedback
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                  Please Select the field
+                                                </div>
                                               </div>
                                             </div>
                                           </div>
-                                        </div>
-                                      </form>
-                                      <div class="d-sm-flex justify-content-between">
-                                        <div class="field-wrapper">
-                                          <button
-                                            type="submit"
-                                            class="btn btn-primary"
-                                            value=""
-                                          >
-                                            Trade Now !
-                                          </button>
+                                        </form>
+                                        <div class="d-sm-flex justify-content-between">
+                                          <div class="field-wrapper">
+                                            <button
+                                              type="submit"
+                                              class="btn btn-primary"
+                                              value=""
+                                            >
+                                              Trade Now !
+                                            </button>
+                                          </div>
                                         </div>
                                       </div>
-                                    </div>
-                                  </form>
+                                    </form>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div class="form-form">
-                            <div class="form-form-wrap">
-                              <div class="form-container">
-                                <div class="form-content">
-                                  <h1 class="">
-                                    Trade token for Ether <br /> right here
-                                  </h1>
-                                  <form class="text-left">
-                                    <div class="form">
-                                      <form
-                                        class="select mt-4"
-                                        noValidate
-                                      >
-                                        <label htmlFor="validationCustom01">
-                                          Amount that you want to trade ( in Set
-                                          )
-                                        </label>
-                                        <div class="form-row">
-                                          <div class="col-md-12">
-                                            <div
-                                              id="select_menu"
-                                              class="form-group mb-4"
-                                            >
-                                              <select
-                                                class="custom-select"
-                                                required
+                          <div class="col-lg-4" style={{paddingTop : '100px' , paddingBottom  : '100px'}}>
+                            <div class="form-form">
+                              <div class="form-form-wrap">
+                                <div class="form-container">
+                                  <div class="form-content">
+                                    <h1 class="">
+                                      Trade token for Ether <br /> right here
+                                    </h1>
+                                    <form class="text-left">
+                                      <div class="form">
+                                        <form class="select mt-4" noValidate>
+                                          <label htmlFor="validationCustom01">
+                                            Amount that you want to trade ( in
+                                            Set )
+                                          </label>
+                                          <div class="form-row">
+                                            <div class="col-md-12">
+                                              <div
+                                                id="select_menu"
+                                                class="form-group mb-4"
                                               >
-                                                <option value="10">10</option>
-                                                <option value="50">50</option>
-                                                <option value="100">100</option>
-                                                <option value="500">500</option>
-                                                <option value="1000">
-                                                  1000
-                                                </option>
-                                                <option value="5000">
-                                                  5000
-                                                </option>
-                                                <option value="10000">
-                                                  10000
-                                                </option>
-                                              </select>
-                                              <div class="valid-feedback">
-                                                Example valid custom select
-                                                feedback
-                                              </div>
-                                              <div class="invalid-feedback">
-                                                Please Select the field
+                                                <select
+                                                  class="custom-select"
+                                                  required
+                                                >
+                                                  <option value="10">10</option>
+                                                  <option value="50">50</option>
+                                                  <option value="100">
+                                                    100
+                                                  </option>
+                                                  <option value="500">
+                                                    500
+                                                  </option>
+                                                  <option value="1000">
+                                                    1000
+                                                  </option>
+                                                  <option value="5000">
+                                                    5000
+                                                  </option>
+                                                  <option value="10000">
+                                                    10000
+                                                  </option>
+                                                </select>
+                                                <div class="valid-feedback">
+                                                  Example valid custom select
+                                                  feedback
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                  Please Select the field
+                                                </div>
                                               </div>
                                             </div>
                                           </div>
-                                        </div>
-                                      </form>
-                                      <div class="d-sm-flex justify-content-between">
-                                        <div class="field-wrapper">
-                                          <button
-                                            type="submit"
-                                            class="btn btn-primary"
-                                            value=""
-                                          >
-                                            Trade Now !
-                                          </button>
+                                        </form>
+                                        <div class="d-sm-flex justify-content-between">
+                                          <div class="field-wrapper">
+                                            <button
+                                              type="submit"
+                                              class="btn btn-primary"
+                                              value=""
+                                            >
+                                              Trade Now !
+                                            </button>
+                                          </div>
                                         </div>
                                       </div>
-                                    </div>
-                                  </form>
+                                    </form>
+                                  </div>
                                 </div>
                               </div>
                             </div>

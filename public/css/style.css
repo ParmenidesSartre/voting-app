@@ -27,6 +27,12 @@ Color Code
 /*global area*/
 /*----------------------------------------------------*/
 
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 ::selection {
   color: #fff;
